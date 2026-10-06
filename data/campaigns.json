@@ -1,0 +1,89 @@
+{
+  "refreshed_at": "2026-10-05T07:00:00-07:00",
+  "refreshed_by": "Scam Intel",
+  "campaigns": [
+    {
+      "id": "freshcart-prize-survey",
+      "name": "FreshCart $500 prize survey",
+      "brand": "FreshCart",
+      "family": "prize-survey",
+      "lure": "You've won a $500 FreshCart gift card. Take a 30-second survey to claim.",
+      "asks_for": "Card details for \"shipping\"",
+      "hosts": [
+        "freshcart-rewards-survey.example"
+      ],
+      "url_pattern": "freshcart-rewards-survey.example/claim*",
+      "hosting_provider": "Budget VPS host (shared IP)",
+      "verdict": "scam",
+      "status": "contained",
+      "thumbnails": [
+        "evidence/freshcart-prize-survey/tiktok-redacted.png",
+        "evidence/freshcart-prize-survey/youtube-redacted.png"
+      ],
+      "evidence_report": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/freshcart-prize-survey/report.md",
+      "sighting_count": 24,
+      "channels": [
+        "Reddit",
+        "TikTok",
+        "YouTube"
+      ],
+      "first_seen": "2026-10-01T08:42:00-07:00",
+      "last_seen": "2026-10-04T22:05:00-07:00"
+    },
+    {
+      "id": "streamnest-renewal-refund",
+      "name": "StreamNest renewal refund",
+      "brand": "StreamNest",
+      "family": "refund-callback",
+      "lure": "Your annual StreamNest plan renewed for $89.99. Call or visit to cancel and get a refund.",
+      "asks_for": "Card details and remote access",
+      "hosts": [
+        "streamnest-refunds.example"
+      ],
+      "url_pattern": "streamnest-refunds.example/*",
+      "hosting_provider": "Offshore bulletproof host",
+      "verdict": "scam",
+      "status": "contained",
+      "thumbnails": [
+        "evidence/streamnest-renewal-refund/reddit-redacted.png",
+        "evidence/streamnest-renewal-refund/youtube-redacted.png"
+      ],
+      "evidence_report": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/streamnest-renewal-refund/report.md",
+      "sighting_count": 25,
+      "channels": [
+        "Reddit",
+        "X",
+        "YouTube"
+      ],
+      "first_seen": "2026-09-27T10:12:00-07:00",
+      "last_seen": "2026-10-02T09:07:00-07:00"
+    },
+    {
+      "id": "metropass-unpaid-toll",
+      "name": "MetroPass unpaid toll fee",
+      "brand": "MetroPass Tolls",
+      "family": "toll-fee-smishing",
+      "lure": "You have an unpaid toll balance of $4.85. Avoid a $50 late fee, settle today.",
+      "asks_for": "Card details",
+      "hosts": [
+        "metropass-tollpay.example"
+      ],
+      "url_pattern": "metropass-tollpay.example/settle*",
+      "hosting_provider": "Budget VPS host (shared IP)",
+      "verdict": "scam",
+      "status": "contained",
+      "thumbnails": [
+        "evidence/metropass-unpaid-toll/sms-redacted.png",
+        "evidence/metropass-unpaid-toll/x-redacted.png"
+      ],
+      "evidence_report": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/metropass-unpaid-toll/report.md",
+      "sighting_count": 39,
+      "channels": [
+        "SMS",
+        "X"
+      ],
+      "first_seen": "2026-09-21T18:30:00-07:00",
+      "last_seen": "2026-10-02T20:09:00-07:00"
+    }
+  ]
+}

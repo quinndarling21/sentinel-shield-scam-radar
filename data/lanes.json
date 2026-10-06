@@ -1,0 +1,104 @@
+{
+  "lanes": [
+    {
+      "key": "verified",
+      "label": "Verified",
+      "owner": "Research"
+    },
+    {
+      "key": "pr_merged",
+      "label": "PR merged",
+      "owner": "Detection owner"
+    },
+    {
+      "key": "alert_live",
+      "label": "Alert live",
+      "owner": "Trust & Safety"
+    },
+    {
+      "key": "takedown_sent",
+      "label": "Takedown sent",
+      "owner": "Trust & Safety"
+    }
+  ],
+  "campaigns": {
+    "metropass-unpaid-toll": {
+      "verified": {
+        "status": "done",
+        "link": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/metropass-unpaid-toll/report.md",
+        "at": "2026-09-22T09:40:00-07:00",
+        "owner": "Research"
+      },
+      "pr_merged": {
+        "status": "done",
+        "link": "https://github.com/quinndarling21/sentinel-shield-detections/pull/1",
+        "at": "2026-09-22T15:05:00-07:00",
+        "owner": "Detection owner"
+      },
+      "alert_live": {
+        "status": "done",
+        "link": "https://quinndarling21.github.io/sentinel-shield-help/alerts/metropass-unpaid-toll-text.html",
+        "at": "2026-09-23T10:00:00-07:00",
+        "owner": "Trust & Safety"
+      },
+      "takedown_sent": {
+        "status": "done",
+        "link": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/metropass-unpaid-toll/takedown.md",
+        "at": "2026-09-22T11:20:00-07:00",
+        "owner": "Trust & Safety"
+      }
+    },
+    "streamnest-renewal-refund": {
+      "verified": {
+        "status": "done",
+        "link": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/streamnest-renewal-refund/report.md",
+        "at": "2026-09-29T10:15:00-07:00",
+        "owner": "Research"
+      },
+      "pr_merged": {
+        "status": "done",
+        "link": "https://github.com/quinndarling21/sentinel-shield-detections/pull/2",
+        "at": "2026-09-29T17:42:00-07:00",
+        "owner": "Detection owner"
+      },
+      "alert_live": {
+        "status": "done",
+        "link": "https://quinndarling21.github.io/sentinel-shield-help/alerts/streamnest-renewal-refund-scam.html",
+        "at": "2026-09-30T09:30:00-07:00",
+        "owner": "Trust & Safety"
+      },
+      "takedown_sent": {
+        "status": "done",
+        "link": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/streamnest-renewal-refund/takedown.md",
+        "at": "2026-09-29T12:02:00-07:00",
+        "owner": "Trust & Safety"
+      }
+    },
+    "freshcart-prize-survey": {
+      "verified": {
+        "status": "done",
+        "link": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/freshcart-prize-survey/report.md",
+        "at": "2026-10-02T08:55:00-07:00",
+        "owner": "Research"
+      },
+      "pr_merged": {
+        "status": "done",
+        "link": "https://github.com/quinndarling21/sentinel-shield-detections/pull/3",
+        "at": "2026-10-02T14:10:00-07:00",
+        "owner": "Detection owner"
+      },
+      "alert_live": {
+        "status": "skipped",
+        "at": "2026-10-02T09:30:00-07:00",
+        "owner": "Trust & Safety",
+        "note": "In-app notice only, low reach"
+      },
+      "takedown_sent": {
+        "status": "done",
+        "link": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/freshcart-prize-survey/takedown.md",
+        "at": "2026-10-02T10:48:00-07:00",
+        "owner": "Trust & Safety"
+      }
+    }
+  }
+}
