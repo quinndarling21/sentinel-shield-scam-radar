@@ -12,7 +12,8 @@ The page (`index.html`) is static and renders three data files. To update the da
     "hosts": ["host"], "url_pattern": "host/path*", "hosting_provider": "...",
     "verdict": "scam", "status": "active | contained", "channels": ["SMS","TikTok","X"],
     "sighting_count": 6, "first_seen": "ISO time", "last_seen": "ISO time",
-    "thumbnails": ["evidence/<id>/<file>-redacted.png"], "evidence_report": "link" } ] }
+    "thumbnails": ["evidence/<id>/<file>-redacted.png"], "evidence_report": "link",
+    "signal_filed_at": "optional ISO time the harvester filed the signal (shows Signal to protection time once contained)" } ] }
 ```
 `status` is `active` until all four lanes are done or skipped, then `contained`.
 

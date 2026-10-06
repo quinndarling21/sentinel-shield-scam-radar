@@ -69,6 +69,12 @@ header{display:flex;align-items:center;justify-content:space-between;gap:20px;ma
 .lane.in_progress{border-color:rgba(77,171,247,.45);background:rgba(77,171,247,.08)} .lane.in_progress .ic{background:var(--blue);color:#06233b}
 .lane.waiting_approval{border-color:rgba(252,196,25,.5);background:rgba(252,196,25,.08)} .lane.waiting_approval .ic{background:var(--amber);color:#3b2c00}
 a.lane:hover{border-color:#6c86c9}
+.camp.featured{grid-column:1/-1;padding:22px 26px}
+.camp.featured h3{font-size:22px}
+.camp.featured .thumbs img{height:170px;max-width:260px}
+.camp.featured .lane{min-height:66px;font-size:12.5px}
+.camp.featured .lane .t{font-size:14.5px}
+.ttp{display:inline-flex;align-items:center;gap:8px;margin-left:10px;font-size:12px;font-weight:700;color:#63e6be;background:rgba(32,201,151,.10);border:1px solid rgba(32,201,151,.35);padding:4px 10px;border-radius:999px;vertical-align:middle}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{color:var(--muted);text-align:left;font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;padding:8px 10px;border-bottom:1px solid var(--line)}
 td{padding:10px;border-bottom:1px solid rgba(31,45,82,.6);vertical-align:middle}
@@ -153,18 +159,23 @@ Promise.all(["campaigns","sightings","lanes"].map(n=>fetch("data/"+n+".json"+bus
     options:{maintainAspectRatio:false,cutout:"64%",animation:{duration:1400},plugins:{legend:{position:"right",labels:{usePointStyle:true,pointStyle:"circle",boxWidth:8}}}}});
   // campaign cards: active first, newest activity first
   const sorted=[...camps].sort((a,b)=>(b._active-a._active)||String(b.last_seen).localeCompare(String(a.last_seen)));
+  const featuredId=sorted.length?[...camps].sort((a,b)=>String(b.last_seen).localeCompare(String(a.last_seen)))[0].id:null;
   document.getElementById("camps").innerHTML=sorted.map(c=>{
+    const feat=c.id===featuredId;
+    const laneTimes=laneDefs.map(d=>laneOf(c.id,d.key)).filter(v=>v.status==="done"&&v.at).map(v=>v.at).sort();
+    let ttp="";
+    if(c.signal_filed_at&&!c._active&&laneTimes.length){const mins=Math.round((new Date(laneTimes[laneTimes.length-1])-new Date(c.signal_filed_at))/60000);ttp=`<span class="ttp">⚡ Signal to protection: ${mins>=120?Math.round(mins/60)+" h":mins+" min"}</span>`;}
     const cs=sights.filter(s=>s.campaign_id===c.id);
     let thumbs=[...(c.thumbnails||[])]; cs.forEach(s=>{if(s.evidence&&!thumbs.includes(s.evidence))thumbs.push(s.evidence);});
-    const shown=thumbs.slice(0,4), extra=thumbs.length-shown.length;
+    const shown=thumbs.slice(0,feat?6:4), extra=thumbs.length-shown.length;
     const chans=(c.channels&&c.channels.length?c.channels:[...new Set(cs.map(s=>s.channel))]);
     const lanes=laneDefs.map(d=>{const v=laneOf(c.id,d.key),st=v.status||"open";
       const icon={done:"✓",skipped:"–",in_progress:"…",waiting_approval:"!",open:""}[st]??"";
       const sub=st==="done"?(v.at?fmt(v.at,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})+" PT":"done"):st==="skipped"?(v.note||"not needed"):st==="waiting_approval"?"waiting on "+(v.owner||d.owner):st==="in_progress"?"in progress":"open · "+d.owner;
       const inner=`<span class="t"><span class="ic">${icon}</span>${esc(d.label)}</span><span>${esc(sub)}</span>`;
       return v.link?`<a class="lane ${st}" href="${esc(v.link)}" target="_blank" rel="noopener">${inner}</a>`:`<div class="lane ${st}">${inner}</div>`;}).join("");
-    return `<article class="camp ${c._active?"active":"contained"}">
-      <div class="ch"><div><h3>${esc(c.name)}</h3><div class="sub">${esc(c.brand)} · ${esc(c.family)} · first seen ${fmt(c.first_seen,{month:"short",day:"numeric"})}</div></div><span class="pill ${c._active?"active":"contained"}">${c._active?"Active":"Contained"}</span></div>
+    return `<article class="camp ${c._active?"active":"contained"}${feat?" featured":""}">
+      <div class="ch"><div><h3>${esc(c.name)}${ttp}</h3><div class="sub">${esc(c.brand)} · ${esc(c.family)} · first seen ${fmt(c.first_seen,{month:"short",day:"numeric"})}</div></div><span class="pill ${c._active?"active":"contained"}">${c._active?"Active":"Contained"}</span></div>
       <div class="thumbs">${shown.map(t=>`<img src="${esc(t)}" alt="Redacted sighting" onclick="lb(this.src,'${esc(c.name).replace(/'/g,"")} · redacted evidence')">`).join("")}${extra>0?`<div class="more">+${extra}</div>`:""}</div>
       <div class="chans">${chans.map(ch=>`<span class="chip"><i style="background:${COL[ch]||"#888"}"></i>${esc(ch)}</span>`).join("")}<span class="count"><b>${c.sighting_count??cs.length}</b>sightings</span></div>
       <dl class="meta"><dt>Lure</dt><dd title="${esc(c.lure)}">${esc(c.lure)}</dd><dt>Host</dt><dd><code>${esc((c.hosts||[]).join(", "))}</code></dd><dt>Asks for</dt><dd>${esc(c.asks_for)}</dd></dl>
