@@ -99,6 +99,26 @@
         "at": "2026-10-02T10:48:00-07:00",
         "owner": "Trust & Safety"
       }
+    },
+    "parcelpoint-redelivery-fee": {
+      "verified": {
+        "status": "done",
+        "link": "https://linear.app/sentinelshield/issue/SEN-5/harvester-parcelpoint-redelivery-fee-text-3-channels",
+        "at": "2026-10-05T21:48:00-07:00",
+        "owner": "Research"
+      },
+      "pr_merged": {
+        "status": "open",
+        "owner": "Detection owner"
+      },
+      "alert_live": {
+        "status": "open",
+        "owner": "Trust & Safety"
+      },
+      "takedown_sent": {
+        "status": "waiting_approval",
+        "owner": "Trust & Safety"
+      }
     }
   }
 }

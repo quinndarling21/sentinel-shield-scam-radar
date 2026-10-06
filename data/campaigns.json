@@ -1,5 +1,5 @@
 {
-  "refreshed_at": "2026-10-05T07:00:00-07:00",
+  "refreshed_at": "2026-10-05T21:53:37-07:00",
   "refreshed_by": "Scam Intel",
   "campaigns": [
     {
@@ -84,6 +84,37 @@
       ],
       "first_seen": "2026-09-21T18:30:00-07:00",
       "last_seen": "2026-10-02T20:09:00-07:00"
+    },
+    {
+      "id": "parcelpoint-redelivery-fee",
+      "name": "ParcelPoint $1.99 redelivery fee",
+      "brand": "ParcelPoint",
+      "family": "delivery-fee-smishing",
+      "lure": "Your package is on hold. Pay a $1.99 redelivery fee to release it (incomplete address label story, fake tracking number, 24-hour countdown).",
+      "asks_for": "$1.99 payment via a \"Pay now\" button",
+      "hosts": [
+        "quinndarling21.github.io"
+      ],
+      "url_pattern": "quinndarling21.github.io/parcelpoint-redelivery/*",
+      "hosting_provider": "GitHub Pages",
+      "verdict": "scam",
+      "status": "active",
+      "thumbnails": [
+        "evidence/parcelpoint-redelivery-fee/sms-redacted.png",
+        "evidence/parcelpoint-redelivery-fee/tiktok-redacted.png",
+        "evidence/parcelpoint-redelivery-fee/x-redacted.png"
+      ],
+      "evidence_report": "https://github.com/quinndarling21/sentinel-shield-scam-radar/blob/main/evidence/parcelpoint-redelivery-fee/report.md",
+      "sighting_count": 8,
+      "channels": [
+        "SMS",
+        "TikTok",
+        "X"
+      ],
+      "first_seen": "2026-10-03T11:20:00-07:00",
+      "last_seen": "2026-10-05T16:12:00-07:00",
+      "signal_filed_at": "2026-10-05T21:43:31-07:00",
+      "linear_issue": "https://linear.app/sentinelshield/issue/SEN-5/harvester-parcelpoint-redelivery-fee-text-3-channels"
     }
   ]
 }
