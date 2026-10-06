@@ -118,8 +118,10 @@
         "owner": "Trust & Safety"
       },
       "takedown_sent": {
-        "status": "waiting_approval",
-        "owner": "Trust & Safety"
+        "status": "done",
+        "owner": "Trust & Safety",
+        "link": "https://mail.google.com/mail/?authuser=quinngrokbot@gmail.com#all/1a10f9430dc42c30",
+        "at": "2026-10-05T22:41:00-07:00"
       }
     }
   }
