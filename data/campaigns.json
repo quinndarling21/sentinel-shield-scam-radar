@@ -1,5 +1,5 @@
 {
-  "refreshed_at": "2026-10-05T21:53:37-07:00",
+  "refreshed_at": "2026-10-05T22:55:00-07:00",
   "refreshed_by": "Scam Intel",
   "campaigns": [
     {
@@ -98,7 +98,7 @@
       "url_pattern": "quinndarling21.github.io/parcelpoint-redelivery/*",
       "hosting_provider": "GitHub Pages",
       "verdict": "scam",
-      "status": "active",
+      "status": "contained",
       "thumbnails": [
         "evidence/parcelpoint-redelivery-fee/sms-redacted.png",
         "evidence/parcelpoint-redelivery-fee/tiktok-redacted.png",
